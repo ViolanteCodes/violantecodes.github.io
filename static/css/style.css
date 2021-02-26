@@ -12,7 +12,6 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 40px;
 }
-
 /* Style the links inside the navigation bar */
 .topnav a {
     color: #f2f2f2;
@@ -39,8 +38,79 @@
 #code-link {
     display: none;
 }
-/*-----------------------Shared Document styles---------------*/
+/*------------------Mobile Navigation---------------------------*/
+#mobile-nav {
+    display: none;
+}
+.mobilenav {
+    overflow: hidden;
+    background-color: rgba(41,41,41,.99);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+/* Hide the links inside the navigation menu (except for logo/home) */
+.mobilenav #myLinks {
+    display: none;
+    transition: 400ms ease-in-out;
+}
 
+/* Style navigation menu links */
+.mobilenav a {
+    color:  rgba(240,241,240,.98);
+    text-decoration: none;
+    font-weight: 200;
+    padding-left: 50px;
+}
+.mobilenav a:visited {
+    color: rgba(240,241,240,.98);
+}
+
+/* Style the hamburger menu */
+.mobilenav a.icon {
+    background: none;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 2px;
+    transition: ease 1s;
+}
+.mobilenav a.icon:hover {
+    color: #480945;
+    transition: ease 1s;
+}
+/* Add a grey background color on mouse-over */
+.mobilenav a:hover {
+    color: rgb(41, 199, 165);
+    text-decoration: underline;
+}
+
+/* Style the active link (or home/logo) */
+.main-mobile {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    background-color: rgb(38, 104, 89);
+    color:  rgba(240,241,240,.98);
+    padding-top: 4px;
+}
+/*---Add a flex container to populated links------*/
+#myLinks {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*-----------------------Shared Document styles---------------*/
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -118,10 +188,13 @@ h4 {
     border-top: 3px dashed rgb(9, 65, 70);
     transition: ease 0.3s;
 }
+.ease {
+    transition: ease 1s;
+}
 /*---Website Portfolio Page----*/
 .website-box {
     display: flex;
-    flex-direction:row-reverse;
+    flex-direction:row;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -437,16 +510,11 @@ a .ball p:hover {
     h3.header-link {
         font-size: 30px;
     }
-    #programming-link {
-        display: none;
+    #main-nav {
+        display:none;
     }
-    #code-link {
+    #mobile-nav {
         display: block;
-    }
-    .topnav {
-        justify-content: space-between;
-        padding-left: 5%;
-        padding-right: 5%;
     }
 }
 @media screen and (max-width: 425px) {
@@ -455,15 +523,6 @@ a .ball p:hover {
     }
     h1.detail-header {
         font-size: 30px;
-    }
-    #websites-link {
-        display: none;
-    }
-    #sites-link {
-        display: block;
-    }
-    #home-link {
-        display: none;
     }
     a .ball {
         font-size: 25px;
